@@ -1,7 +1,7 @@
 const {Thought, User}= require('../models')
 
 const userController= {
-    // get all pizzas
+    // get all users
     getAllUsers(req, res) {
         User.find({})
             .populate({
@@ -16,6 +16,7 @@ const userController= {
             res.sendStatus(400);
             });
     },
+    // get one user
     getUserById({ params }, res) {
         User.findOne({ _id: params.id })
           .populate({
